@@ -1,9 +1,9 @@
 "use client"
 
-import ZoomControls from "../../../../components/ZoomControls"
+import CustomSlider from "../../../../components/CustomSlider"
 
 const ZoomControlsWrapper = () => {
-  return <ZoomControls className="mx-auto" />
+  return <CustomSlider className="mx-auto" />
 }
 
 export default ZoomControlsWrapper
