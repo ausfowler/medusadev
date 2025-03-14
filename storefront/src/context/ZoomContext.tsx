@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from "react"
 
-type ZoomLevel = 1 | 2 | 3 | 4
+type ZoomLevel = 1 | 3 | 5 | 10
 
 interface ZoomContextType {
   zoom: ZoomLevel
@@ -12,7 +12,7 @@ interface ZoomContextType {
 const ZoomContext = createContext<ZoomContextType | undefined>(undefined)
 
 export function ZoomProvider({ children }: { children: ReactNode }) {
-  const [zoom, setZoom] = useState<ZoomLevel>(4)
+  const [zoom, setZoom] = useState<ZoomLevel>(5)
 
   return (
     <ZoomContext.Provider value={{ zoom, setZoom }}>

@@ -45,9 +45,7 @@ const NavigationMenu = () => {
             >
               <div className="flex items-center gap-1">
                 <ShoppingBag size={22} />
-                <span className="text-sm ml-1 font-normal">
-                  {/* Cart count would ideally be fetched from client-side state/context */}
-                </span>
+                <span className="text-sm ml-1 font-normal">1</span>
               </div>
             </LocalizedClientLink>
           </div>

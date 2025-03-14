@@ -12,18 +12,20 @@ const ZoomGrid: React.FC<ZoomGridProps> = ({ children, className = "" }) => {
   const { zoom } = useZoom()
   
   // Determine the grid classes based on zoom level
+  // Only 4 zoom levels: 1, 3, 5, 10
+  // 10 = most zoomed out (many items), 1 = most zoomed in (single item)
   const getGridClasses = () => {
     switch (zoom) {
-      case 1: // Most zoomed in - fewer items per row
-        return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
-      case 2:
-        return "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-      case 3:
-        return "grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6"
-      case 4: // Most zoomed out - more items per row
-        return "grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4"
+      case 1: // Most zoomed in (single item)
+        return "grid-cols-1 gap-8"
+      case 3: // Few items per row
+        return "grid-cols-3 gap-8"
+      case 5: // Medium zoom
+        return "grid-cols-5 gap-6"
+      case 10: // Most zoomed out (many items per row)
+        return "grid-cols-10 gap-4"
       default:
-        return "grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        return "grid-cols-5 gap-6"
     }
   }
   

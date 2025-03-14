@@ -21,11 +21,9 @@ const CartButtonClient: React.FC<CartButtonProps> = ({ cart }) => {
       >
         <div className="flex items-center gap-1">
           <ShoppingBag size={22} />
-          {totalItems > 0 && (
-            <span className="text-sm ml-1 font-normal">
-              {totalItems}
-            </span>
-          )}
+          <span className="text-sm ml-1 font-normal">
+            {totalItems}
+          </span>
         </div>
       </LocalizedClientLink>
     </div>
